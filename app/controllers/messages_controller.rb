@@ -1,6 +1,6 @@
-class MessagesController < ApplicationController
-  def random_greeting
-    random_message = Message.order('RANDOM()').first
-    render json: { greeting: random_message.greeting }
+class Api::GreetingsController < ApplicationController
+  def index
+    @greeting = Message.order('RANDOM()').first
+    render json: { message: @greeting.content }
   end
 end
