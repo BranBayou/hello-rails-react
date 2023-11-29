@@ -1,16 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-function App() {
-  return (
-  <dib>
-    <h1>Hello World!</h1>
-    <p>This is react-rails project</p>
-  </dib>
-  );
-}
+import App from './components/App';
+import store from "./redux/store";
+import { Provider } from "react-redux";
 
 ReactDOM.render(
-  <App/>,
+  <Provider store={store}>
+    <App/>
+  </Provider>,
   document.getElementById('root'),
 );
